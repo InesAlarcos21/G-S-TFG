@@ -1,0 +1,836 @@
+-- MySQL dump 10.13  Distrib 8.0.18, for Win64 (x86_64)
+--
+-- Host: 127.0.0.1    Database: gympt
+-- ------------------------------------------------------
+-- Server version	8.0.23
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `cartegoria_entrenos`
+--
+
+DROP TABLE IF EXISTS `cartegoria_entrenos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `cartegoria_entrenos` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `nombre_categoria` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `cartegoria_entrenos`
+--
+
+LOCK TABLES `cartegoria_entrenos` WRITE;
+/*!40000 ALTER TABLE `cartegoria_entrenos` DISABLE KEYS */;
+INSERT INTO `cartegoria_entrenos` VALUES (1,'Entrenamientos de Fuerza','2021-05-24 04:35:00','2021-05-24 04:35:00'),(2,'Entrenamientos de Cardio','2021-05-24 04:35:00','2021-05-24 04:35:00'),(3,'Entrenaminetos de Natacion','2021-05-24 04:35:00','2021-05-24 04:35:00'),(4,'Entrenamientos de Crossfit','2021-05-24 04:35:00','2021-05-24 04:35:00'),(5,'Entrenamientos de Pilates','2021-05-24 04:35:00','2021-05-24 04:35:00'),(6,'Entrenamientos de Yoga','2021-05-24 04:35:00','2021-05-24 04:35:00');
+/*!40000 ALTER TABLE `cartegoria_entrenos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `categoria_noticias`
+--
+
+DROP TABLE IF EXISTS `categoria_noticias`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `categoria_noticias` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `nombre_categoria` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `categoria_noticias`
+--
+
+LOCK TABLES `categoria_noticias` WRITE;
+/*!40000 ALTER TABLE `categoria_noticias` DISABLE KEYS */;
+/*!40000 ALTER TABLE `categoria_noticias` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `categoria_recetas`
+--
+
+DROP TABLE IF EXISTS `categoria_recetas`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `categoria_recetas` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `nombre_categoria` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `categoria_recetas`
+--
+
+LOCK TABLES `categoria_recetas` WRITE;
+/*!40000 ALTER TABLE `categoria_recetas` DISABLE KEYS */;
+INSERT INTO `categoria_recetas` VALUES (1,'Ensaldas','2021-05-24 04:35:00','2021-05-24 04:35:00'),(2,'Guisos','2021-05-24 04:35:00','2021-05-24 04:35:00'),(3,'Cenas','2021-05-24 04:35:00','2021-05-24 04:35:00'),(4,'Postres','2021-05-24 04:35:00','2021-05-24 04:35:00'),(5,'Comidas','2021-05-24 04:35:00','2021-05-24 04:35:00'),(6,'Desayunos','2021-05-24 04:35:00','2021-05-24 04:35:00');
+/*!40000 ALTER TABLE `categoria_recetas` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `comidas`
+--
+
+DROP TABLE IF EXISTS `comidas`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `comidas` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tipo` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ingredientes` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `preparacion` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tiempo` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `imagen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `comidas`
+--
+
+LOCK TABLES `comidas` WRITE;
+/*!40000 ALTER TABLE `comidas` DISABLE KEYS */;
+INSERT INTO `comidas` VALUES (1,'Bol de Kefir con fruta y semillas','Desayuno','<div>Kefir y fruta</div>','<div>Mezclar todo en un bol</div>','2','upload-comidas/Mo6G3OY3kYWgtg2L9Glw8NCi0Zn8UxXJugg7h5s2.jpg',NULL,NULL),(2,'Pisto Manchego','Comida','<div>Tomate, calabacín,&nbsp; pimiento rojo, pimiento verde, huevo</div>','<div>Sofreir todas las verduras juntas con un poco de AOVE, sal y pimienta&nbsp;<br>Finalmente añadir un huevo a la plancha&nbsp;</div>','25','upload-comidas/YkyUidAAW3dNijmR6y2oPU9MNSJZ15atGQa9Xs3A.jpg',NULL,NULL);
+/*!40000 ALTER TABLE `comidas` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `contactos`
+--
+
+DROP TABLE IF EXISTS `contactos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `contactos` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `duda` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `descripcion` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `contactos_email_unique` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `contactos`
+--
+
+LOCK TABLES `contactos` WRITE;
+/*!40000 ALTER TABLE `contactos` DISABLE KEYS */;
+/*!40000 ALTER TABLE `contactos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `entrenadores`
+--
+
+DROP TABLE IF EXISTS `entrenadores`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `entrenadores` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `entrenadores`
+--
+
+LOCK TABLES `entrenadores` WRITE;
+/*!40000 ALTER TABLE `entrenadores` DISABLE KEYS */;
+/*!40000 ALTER TABLE `entrenadores` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `entrenos`
+--
+
+DROP TABLE IF EXISTS `entrenos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `entrenos` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tipo` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ejercicio` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `repeticion` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tiempo` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `imagen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `entrenos`
+--
+
+LOCK TABLES `entrenos` WRITE;
+/*!40000 ALTER TABLE `entrenos` DISABLE KEYS */;
+INSERT INTO `entrenos` VALUES (1,'Entrenamiento de piernas','entrenamiento de fuerza','<div>Sentadilla bulgara</div>','15','30','upload-comidas/grCVaKpco7ZwB6jJzgocgXk5hHfqpT0WZUqJdojc.png',NULL,NULL);
+/*!40000 ALTER TABLE `entrenos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `events`
+--
+
+DROP TABLE IF EXISTS `events`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `events` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `titulo` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `descripcion` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `conferencia` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `fecha` date NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `events`
+--
+
+LOCK TABLES `events` WRITE;
+/*!40000 ALTER TABLE `events` DISABLE KEYS */;
+/*!40000 ALTER TABLE `events` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `failed_jobs`
+--
+
+DROP TABLE IF EXISTS `failed_jobs`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `failed_jobs` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `uuid` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `failed_jobs`
+--
+
+LOCK TABLES `failed_jobs` WRITE;
+/*!40000 ALTER TABLE `failed_jobs` DISABLE KEYS */;
+/*!40000 ALTER TABLE `failed_jobs` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `informacions`
+--
+
+DROP TABLE IF EXISTS `informacions`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `informacions` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `informacions`
+--
+
+LOCK TABLES `informacions` WRITE;
+/*!40000 ALTER TABLE `informacions` DISABLE KEYS */;
+/*!40000 ALTER TABLE `informacions` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `likes_receta`
+--
+
+DROP TABLE IF EXISTS `likes_receta`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `likes_receta` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` bigint unsigned NOT NULL,
+  `receta_id` bigint unsigned NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `likes_receta_user_id_foreign` (`user_id`),
+  KEY `likes_receta_receta_id_foreign` (`receta_id`),
+  CONSTRAINT `likes_receta_receta_id_foreign` FOREIGN KEY (`receta_id`) REFERENCES `recetas` (`id`),
+  CONSTRAINT `likes_receta_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `likes_receta`
+--
+
+LOCK TABLES `likes_receta` WRITE;
+/*!40000 ALTER TABLE `likes_receta` DISABLE KEYS */;
+/*!40000 ALTER TABLE `likes_receta` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `listado`
+--
+
+DROP TABLE IF EXISTS `listado`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `listado` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tipo` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ingredientes` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `preparacion` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tiempo` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `imagen` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `listado`
+--
+
+LOCK TABLES `listado` WRITE;
+/*!40000 ALTER TABLE `listado` DISABLE KEYS */;
+/*!40000 ALTER TABLE `listado` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `migrations`
+--
+
+DROP TABLE IF EXISTS `migrations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `migrations` (
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `batch` int NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=212 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `migrations`
+--
+
+LOCK TABLES `migrations` WRITE;
+/*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
+INSERT INTO `migrations` VALUES (192,'2014_10_12_000000_create_users_table',1),(193,'2014_10_12_100000_create_password_resets_table',1),(194,'2019_08_19_000000_create_failed_jobs_table',1),(195,'2021_04_29_154015_create_recetas_table',1),(196,'2021_05_03_174818_create_perfils_table',1),(197,'2021_05_04_160942_create_likes_recetas_pivot_table',1),(198,'2021_05_07_110302_create_informacions_table',1),(199,'2021_05_07_111035_create_noticias_table',1),(200,'2021_05_07_111052_create_testimoniales_table',1),(201,'2021_05_07_111104_create_planes_table',1),(202,'2021_05_12_073751_create_events_table',1),(203,'2021_05_13_112516_create_contactos_table',1),(204,'2021_05_13_113118_create_nosotros_table',1),(205,'2021_05_16_110405_create_permission_tables',1),(206,'2021_05_17_111354_create_rols_table',1),(207,'2021_05_17_113547_create_rols_users_table',1),(208,'2021_05_18_101745_create_entrenadores_table',1),(209,'2021_05_23_154814_create_listado_table',1),(210,'2021_05_23_163850_create_comidas_table',1),(211,'2021_05_23_190822_create_entrenos_table',1);
+/*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `model_has_permissions`
+--
+
+DROP TABLE IF EXISTS `model_has_permissions`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `model_has_permissions` (
+  `permission_id` bigint unsigned NOT NULL,
+  `model_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `model_id` bigint unsigned NOT NULL,
+  PRIMARY KEY (`permission_id`,`model_id`,`model_type`),
+  KEY `model_has_permissions_model_id_model_type_index` (`model_id`,`model_type`),
+  CONSTRAINT `model_has_permissions_permission_id_foreign` FOREIGN KEY (`permission_id`) REFERENCES `permissions` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `model_has_permissions`
+--
+
+LOCK TABLES `model_has_permissions` WRITE;
+/*!40000 ALTER TABLE `model_has_permissions` DISABLE KEYS */;
+/*!40000 ALTER TABLE `model_has_permissions` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `model_has_roles`
+--
+
+DROP TABLE IF EXISTS `model_has_roles`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `model_has_roles` (
+  `role_id` bigint unsigned NOT NULL,
+  `model_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `model_id` bigint unsigned NOT NULL,
+  PRIMARY KEY (`role_id`,`model_id`,`model_type`),
+  KEY `model_has_roles_model_id_model_type_index` (`model_id`,`model_type`),
+  CONSTRAINT `model_has_roles_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `model_has_roles`
+--
+
+LOCK TABLES `model_has_roles` WRITE;
+/*!40000 ALTER TABLE `model_has_roles` DISABLE KEYS */;
+/*!40000 ALTER TABLE `model_has_roles` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `nosotros`
+--
+
+DROP TABLE IF EXISTS `nosotros`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `nosotros` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `titulo` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `descripcion` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `imagen` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `nosotros`
+--
+
+LOCK TABLES `nosotros` WRITE;
+/*!40000 ALTER TABLE `nosotros` DISABLE KEYS */;
+/*!40000 ALTER TABLE `nosotros` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `noticias`
+--
+
+DROP TABLE IF EXISTS `noticias`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `noticias` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `titulo` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `descripcion` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `fuente` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `imagen` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `noticias`
+--
+
+LOCK TABLES `noticias` WRITE;
+/*!40000 ALTER TABLE `noticias` DISABLE KEYS */;
+INSERT INTO `noticias` VALUES (1,'Descubren cómo el ejercicio mejora la sensibilidad a la insulina','<div>El ejercicio físico mejora la sensibilidad a la insulina porque los músculos liberan microRNA que facilitan la tarea de la insulina, según los resultados de un estudio que pueden ayudar a tratar el síndrome metabólico y la diabetes.<br><br>La práctica de ejercicio físico causa un impacto beneficioso sobre el metabolismo a través de un mecanismo por el que los músculos liberan ciertos microRNAs, que son transportados en pequeñas vesículas (exosomas) y permiten que en el hígado se module la expresión de determinados genes que mejoran la sensibilidad a la insulina, según concluye un estudio realizado por científicos del CIBERDEM y del Instituto de Investigaciones Biomédicas August Pi i Sunyer (IDIBAPS).<br><br>Los microRNAs son pequeñas moléculas que tienen la capacidad de regular la expresión de los genes. Casi todas las células pueden secretarlos, y se distribuyen por el organismo a través de la sangre en el interior de los exosomas, unas pequeñas nanovesículas capaces de transportarlos que se han revelado como un sistema potencialmente muy relevante para la comunicación intercelular.<br><br>Varias patologías, incluyendo las enfermedades metabólicas, están relacionadas con los cambios en el perfil de los microRNAs circulantes en la sangre, y por ello pueden servir como biomarcadores para mejorar el diagnóstico de las enfermedades y hacer un seguimiento de la respuesta a los tratamientos. Los hallazgos de esta investigación, que se ha publicado en PNAS, pueden contribuir al desarrollo de nuevos tratamientos para la diabetes tipo 2 y el síndrome metabólico.<br><br>Un mecanismo de comunicación entre el músculo y el hígado<br><br>Los autores del estudio administraron exosomas de ratones entrenados a ratones sedentarios y observaron que los últimos eran capaces de modular la expresión de ciertos genes en el hígado, lo que mejoró la sensibilidad a la insulina de los animales tratados.<br><br>Según han explicado los investigadores “el estudio revela un mecanismo de comunicación entre diferentes órganos, en este caso músculo e hígado, poco explorado hasta la fecha, y proporciona una nueva diana terapéutica para el tratamiento de la diabetes tipo 2 y el síndrome metabólico”. Y también han señalado que “esta nueva vía resulta de particular interés para aquellos pacientes de avanzada edad o con problemas de fragilidad física que les impida hacer esfuerzos intensivos”.<br><br></div>','Centro de Investigación Biomédica en Red (CIBERDEM)','upload-noticias/0NHLeoKRUlsvPU8cBe3vuTyheayFs6evLrjNBu19.jpg',NULL,NULL),(2,'El ejercicio aeróbico protege la memoria de los mayores con alzhéim','<div>La pérdida de memoria es la característica más significativa del alzhéimer, que hace que la persona vaya perdiendo la capacidad de recordar o pensar en cosas, e incluso reconocer a familiares o amigos. Un estudio piloto de la Universidad de Arizona (EE.UU.) ha descubierto que los pacientes mayores con alzhéimer de leve a moderado pueden ayudar a retrasar la pérdida de memoria si hacen ejercicio aeróbico, como pedalear en una bicicleta estática, unas tres veces a la semana.<br><br>\"Nuestro hallazgo principal indica que una intervención de ejercicio aeróbico de seis meses redujo significativamente el deterioro cognitivo en comparación con el curso natural de los cambios para la demencia de Alzheimer”, ha explicado Fang Yu, directora del estudio, que se ha publicado en Journal of Alzheimer\'s Disease.<br><br>En la investigación que ha llegado a esta conclusión se analizó a 96 personas con alzhéimer y 77 años de media.<br>Una parte de ellos hizo ejercicio en bicicleta estática a intensidad moderada entre 20 y 50 minutos tres veces a la semana, y el resto realizó ejercicios de estiramientos y movilidad.<br><br>Los investigadores sacaron conclusiones seis meses después, tras estudiar el estado de cognición de los participantes. El ejercicio aeróbico y los estiramientos beneficiaron la memoria.<br>Los resultados mostraron que ambos grupos tenían puntuaciones más bajas en la progresión del alzhéimer que las que se esperaban de acuerdo a la progresión de esta demencia, por lo que ambas actividades parecen ser beneficiosas para frenar el avance de la enfermedad, especialmente en el caso de la pérdida de memoria.<br>No obstante, la autora principal ha destacado que no fueron capaces de encontrar un efecto superior del ejercicio aeróbico frente a los estiramientos, y lo atribuyen a que el estudio es una prueba piloto. “No tenemos el poder estadístico para detectar diferencias entre los grupos, hubo un efecto de interacción social sustancial en el grupo de estiramiento, y muchos participantes de estiramiento hicieron ejercicio aeróbico por sí mismos”.<br><br>Por todo ello, los investigadores de este trabajo creen que se deben llevar a cabo más estudios al respecto, con el fin de corroborar sus hallazgos y poder conocer más sobre cómo frenar el progreso de la demencia en las personas con alzhéimer, una enfermedad que carece de un tratamiento curativo a día de hoy.<br><br></div>','revistaalimentaria','upload-noticias/5HSVIRcRKEw7pGHfiY2HETEu0YC0okL7U7CLgbRN.jpg',NULL,NULL),(3,'Nueva guía de alimentación saludable para mayores de 55 años','<div>Aunque debemos hacerlo a todas las edades, a partir de los 50 años cuidar la alimentación adquiere aún más relevancia si cabe. No obstante, una gran mayoría de las personas de este rango de edad no tienen conocimientos sobre nutrición y desconocen los alimentos que necesitan para obtener los nutrientes necesarios para mantener un buen estado de salud.<br><br><em>Por eso, varias instituciones han lanzado una Guía Nutricional dentro del proyecto Food Gaming for Active Ageing (FG4AG) sobre cómo mantener hábitos alimenticios, que se dirige a las personas mayores de 55 años dentro de la Unión Europea. </em><br><br>En concreto, los centros implicados son el Instituto Tecnológico del Producto Infantil y Ocio (AIJU), la Asociación E-Seniors de París, la Universidad Albertay de Escocia y VITECO, centro tecnológico.<br><br>La guía aporta información detallada sobre los beneficios de los diferentes grupos de alimentos y nutrientes. Y presta mayor atención a las necesidades nutricionales de las personas de esta edad.<br><br><em>También recoge información sobre los diferentes grupos de alimentos, así como las necesidades de nutrientes de los individuos y su papel dentro del cuerpo humano. También aporta conocimiento sobre los cambios fisiológicos, psicológicos y de estilo de vida que se dan a partir de los 55 años. </em><br><br></div>','Centro de Investigación Biomédica en Red (CIBERDEM)','upload-noticias/LATAMGeB6ROgwXxWdQgWEmPTuJQGlMCQoMMVDDdp.jpg',NULL,NULL);
+/*!40000 ALTER TABLE `noticias` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `password_resets`
+--
+
+DROP TABLE IF EXISTS `password_resets`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `password_resets` (
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  KEY `password_resets_email_index` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `password_resets`
+--
+
+LOCK TABLES `password_resets` WRITE;
+/*!40000 ALTER TABLE `password_resets` DISABLE KEYS */;
+/*!40000 ALTER TABLE `password_resets` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `perfils`
+--
+
+DROP TABLE IF EXISTS `perfils`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `perfils` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` bigint unsigned NOT NULL,
+  `biografia` text COLLATE utf8mb4_unicode_ci,
+  `imagen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `perfils_user_id_foreign` (`user_id`),
+  CONSTRAINT `perfils_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `perfils`
+--
+
+LOCK TABLES `perfils` WRITE;
+/*!40000 ALTER TABLE `perfils` DISABLE KEYS */;
+INSERT INTO `perfils` VALUES (1,1,NULL,NULL,'2021-05-24 04:35:00','2021-05-24 04:35:00'),(2,2,NULL,NULL,'2021-05-24 04:36:28','2021-05-24 04:36:28'),(3,3,NULL,NULL,'2021-05-24 04:37:28','2021-05-24 04:37:28'),(4,4,NULL,NULL,'2021-05-24 04:45:04','2021-05-24 04:45:04'),(5,5,NULL,NULL,'2021-05-24 04:45:47','2021-05-24 04:45:47');
+/*!40000 ALTER TABLE `perfils` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `permissions`
+--
+
+DROP TABLE IF EXISTS `permissions`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `permissions` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `guard_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `permissions_name_guard_name_unique` (`name`,`guard_name`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `permissions`
+--
+
+LOCK TABLES `permissions` WRITE;
+/*!40000 ALTER TABLE `permissions` DISABLE KEYS */;
+INSERT INTO `permissions` VALUES (1,'recetas.index','web','2021-05-24 04:35:00','2021-05-24 04:35:00'),(2,'recetas.create','web','2021-05-24 04:35:00','2021-05-24 04:35:00'),(3,'recetas.edit','web','2021-05-24 04:35:00','2021-05-24 04:35:00'),(4,'recetas.destroy','web','2021-05-24 04:35:00','2021-05-24 04:35:00'),(5,'perfiles.edit','web','2021-05-24 04:35:00','2021-05-24 04:35:00'),(6,'noticias.create','web','2021-05-24 04:35:00','2021-05-24 04:35:00'),(7,'planes.create','web','2021-05-24 04:35:00','2021-05-24 04:35:00'),(8,'testimoniales.create','web','2021-05-24 04:35:00','2021-05-24 04:35:00'),(9,'nosotros.create','web','2021-05-24 04:35:00','2021-05-24 04:35:00'),(10,'evento.index','web','2021-05-24 04:35:00','2021-05-24 04:35:00'),(11,'evento.calendario','web','2021-05-24 04:35:00','2021-05-24 04:35:00'),(12,'evento.create','web','2021-05-24 04:35:00','2021-05-24 04:35:00'),(13,'evento.edit','web','2021-05-24 04:35:00','2021-05-24 04:35:00'),(14,'evento.destroy','web','2021-05-24 04:35:00','2021-05-24 04:35:00');
+/*!40000 ALTER TABLE `permissions` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `planes`
+--
+
+DROP TABLE IF EXISTS `planes`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `planes` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` bigint unsigned NOT NULL,
+  `nombre` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `descripcion` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `precio` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `imagen` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `planes_user_id_foreign` (`user_id`),
+  CONSTRAINT `planes_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `planes`
+--
+
+LOCK TABLES `planes` WRITE;
+/*!40000 ALTER TABLE `planes` DISABLE KEYS */;
+INSERT INTO `planes` VALUES (1,1,'Plan de Entrenamiento','<div>Entrevista completa con tu entrenador.<br>Plan adaptado 100% a tus necesidades.Seguimiento de las sesiones vía online.<br>Duración de las sesiones 60 minutos.<br>Resolución de dudas.</div>','120€','upload-planes/vQ5geIDK69q3WgeTpYZbaLx7mA1EMjvZIhwxTzFr.jpg',NULL,NULL),(2,1,'Plan de Entrenamiento + Nutrición','<div>Entrevista completa con tu entrenador y con tu nutricionista.<br>Plan adaptado 100% a tus necesidades.<br>Seguimiento de las sesiones vía online tanto para nutrición como para deporte.<br>Duración de las sesiones de entrenamiento son 60 minutos.<br>Contacto continuo a través de nuestra aplicación y Whatsapp.<br>Planes adaptados a veganos/vegetarianos.</div>','340€','upload-planes/gqeStQRbTxUhnS3zQA215hmA3R43Bl14xNb513CS.jpg',NULL,NULL),(3,1,'Plan de Nutrición','<div>Entrevista completa con tu nutricionista.<br>Planes adaptados para veganos/vegetarianos, intolerancias u otro tipo de problemas<br>Seguimiento de las sesiones vía online.<br>Resolución de dudas.</div>','120€','upload-planes/GrcLme3S1GJYyeN5P7GP95KDP3AW34qoDgDwEZJ9.jpg',NULL,NULL);
+/*!40000 ALTER TABLE `planes` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `recetas`
+--
+
+DROP TABLE IF EXISTS `recetas`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `recetas` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` bigint unsigned NOT NULL,
+  `cliente_id` bigint unsigned NOT NULL,
+  `recetas_id` bigint unsigned NOT NULL,
+  `entrenos_id` bigint unsigned NOT NULL,
+  `nombre` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ingredientes` text COLLATE utf8mb4_unicode_ci,
+  `preparacion` text COLLATE utf8mb4_unicode_ci,
+  `tiempoCocinado` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `ejercicios` text COLLATE utf8mb4_unicode_ci,
+  `repeticiones` text COLLATE utf8mb4_unicode_ci,
+  `imagen` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `recetas_user_id_foreign` (`user_id`),
+  KEY `recetas_cliente_id_foreign` (`cliente_id`),
+  KEY `recetas_recetas_id_foreign` (`recetas_id`),
+  KEY `recetas_entrenos_id_foreign` (`entrenos_id`),
+  CONSTRAINT `recetas_cliente_id_foreign` FOREIGN KEY (`cliente_id`) REFERENCES `users` (`id`),
+  CONSTRAINT `recetas_entrenos_id_foreign` FOREIGN KEY (`entrenos_id`) REFERENCES `cartegoria_entrenos` (`id`),
+  CONSTRAINT `recetas_recetas_id_foreign` FOREIGN KEY (`recetas_id`) REFERENCES `categoria_recetas` (`id`),
+  CONSTRAINT `recetas_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `recetas`
+--
+
+LOCK TABLES `recetas` WRITE;
+/*!40000 ALTER TABLE `recetas` DISABLE KEYS */;
+/*!40000 ALTER TABLE `recetas` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `role_has_permissions`
+--
+
+DROP TABLE IF EXISTS `role_has_permissions`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `role_has_permissions` (
+  `permission_id` bigint unsigned NOT NULL,
+  `role_id` bigint unsigned NOT NULL,
+  PRIMARY KEY (`permission_id`,`role_id`),
+  KEY `role_has_permissions_role_id_foreign` (`role_id`),
+  CONSTRAINT `role_has_permissions_permission_id_foreign` FOREIGN KEY (`permission_id`) REFERENCES `permissions` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `role_has_permissions_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `role_has_permissions`
+--
+
+LOCK TABLES `role_has_permissions` WRITE;
+/*!40000 ALTER TABLE `role_has_permissions` DISABLE KEYS */;
+INSERT INTO `role_has_permissions` VALUES (5,1),(6,1),(7,1),(9,1),(10,1),(11,1),(12,1),(13,1),(14,1),(5,2),(8,2),(10,2),(11,2),(5,3),(8,3),(10,3),(11,3),(12,3),(13,3),(14,3),(5,4),(8,4),(10,4),(11,4),(12,4),(13,4),(14,4);
+/*!40000 ALTER TABLE `role_has_permissions` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `roles`
+--
+
+DROP TABLE IF EXISTS `roles`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `roles` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `guard_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `roles_name_guard_name_unique` (`name`,`guard_name`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `roles`
+--
+
+LOCK TABLES `roles` WRITE;
+/*!40000 ALTER TABLE `roles` DISABLE KEYS */;
+INSERT INTO `roles` VALUES (1,'Administrador','web','2021-05-24 04:35:00','2021-05-24 04:35:00'),(2,'Normales','web','2021-05-24 04:35:00','2021-05-24 04:35:00'),(3,'Entrenadores','web','2021-05-24 04:35:00','2021-05-24 04:35:00'),(4,'Nutricionistas','web','2021-05-24 04:35:00','2021-05-24 04:35:00');
+/*!40000 ALTER TABLE `roles` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `rols`
+--
+
+DROP TABLE IF EXISTS `rols`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `rols` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `full-access` enum('si','no') COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `rols`
+--
+
+LOCK TABLES `rols` WRITE;
+/*!40000 ALTER TABLE `rols` DISABLE KEYS */;
+/*!40000 ALTER TABLE `rols` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `rols_users`
+--
+
+DROP TABLE IF EXISTS `rols_users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `rols_users` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `role_id` bigint unsigned NOT NULL,
+  `user_id` bigint unsigned NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `rols_users_role_id_foreign` (`role_id`),
+  KEY `rols_users_user_id_foreign` (`user_id`),
+  CONSTRAINT `rols_users_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `rols` (`id`),
+  CONSTRAINT `rols_users_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `rols_users`
+--
+
+LOCK TABLES `rols_users` WRITE;
+/*!40000 ALTER TABLE `rols_users` DISABLE KEYS */;
+/*!40000 ALTER TABLE `rols_users` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `testimoniales`
+--
+
+DROP TABLE IF EXISTS `testimoniales`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `testimoniales` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` bigint unsigned NOT NULL,
+  `titulo` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `descripcion` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `imagen` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `testimoniales_user_id_foreign` (`user_id`),
+  CONSTRAINT `testimoniales_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `testimoniales`
+--
+
+LOCK TABLES `testimoniales` WRITE;
+/*!40000 ALTER TABLE `testimoniales` DISABLE KEYS */;
+INSERT INTO `testimoniales` VALUES (1,3,'Mi gran perdida de peso','<div>Gracias al trabajo llevado a cabo con María he logrado bajar 5kg en 2 meses y ahora me encuentro en la fase de mantenimiento&nbsp;</div>','upload-testimonios/XcfN2jaMQlllGDNJAqEubwafybfMlWdPdpx38GgV.jpg',NULL,NULL),(2,3,'Mis comienzos','<div>Comencé a trabajar con María hace 2 años y al principio fue duro puesto que jamás había seguidos buenos hábitos alimenticios, pero con su ayuda he mejorado mucho y me siento mucho mejor</div>','upload-testimonios/GDf2KLlv3vCqXfoXZBSgUUJ5pV6zxHtgPIlwo7ew.jpg',NULL,NULL);
+/*!40000 ALTER TABLE `testimoniales` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `users` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `apellido` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `fechaN` date NOT NULL,
+  `sexo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email_verified_at` timestamp NULL DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tipoUser` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `plan` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `experto` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `formacion` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `interes` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `imagen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `users_email_unique` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'Ines','Alarcos','1994-04-21','Femenino','ialarcosq02@gmail.com',NULL,'$2y$10$wcA1saOZYhTdpekEea/4Ce654k9UGN3BZLnN4ytVGSJazMmCyAylq','Administrador',NULL,NULL,NULL,NULL,NULL,NULL,'2021-05-24 04:35:00','2021-05-24 04:35:00'),(2,'Maria','Alarcos','1988-08-08','Femenino','maria@gmail.com',NULL,'$2y$10$1t/O9EKj0g.uHFZcWzea9eRYWdfFLqNYw7YMaSiXR5QhZHCsc.Efu','Licenciado en Nutricion y Dietetica',NULL,NULL,'<div>Graduada en Nutrición y Dietética por la Universidad de Granada.&nbsp;</div>','<div>Curso de alimentación para deportistas de alto rendimiento.&nbsp;<br>Curso de alimentación vegana.&nbsp;<br>Curso de alimentación vegetariana.</div>','upload-perfiles/IJB3qlOGmdjCx5Yw1gs1ciwPnsPAe3osd7pi5fUs.jpg',NULL,'2021-05-24 04:36:28','2021-05-24 04:36:49'),(3,'Elisa','Teva','1996-06-05','Femenino','elisa@gmail.com',NULL,'$2y$10$7v8SBrZ1xya58m0JQiNKCew0jHPcn5QZpis5g5aFtZdjD1haV.M0m','Normal','Nutricion','2',NULL,'<div>Problemas de intolerancia al gluten&nbsp;</div>','upload-perfiles/Ya4JxIdvGpCoiuBMYp37NftaLqcQnyc4Zm3Yy7sd.jpg',NULL,'2021-05-24 04:37:28','2021-05-24 04:37:50'),(4,'Carlos','Perez','1995-02-16','Masculino','carlos@gmail.com',NULL,'$2y$10$0.MMu4Sapo/tlS4rA/zVWueiV/5OHJhcmCfUO242uTOzIndoTsahy','Licenciado en Ciencias de la Actividad Física y el Deporte',NULL,NULL,'<div>Graduado en Ciencias de la Actividad Física y el Deporte por la Universidad de Jaén.&nbsp;</div>','<div>Curso de Entrenador Personal a Nivel Nacional.&nbsp;<br>Curso de Entrenador Nacional de Natación.&nbsp;<br>Curso de Entrenador de CrossFit</div>','upload-perfiles/YMfVALuA8lS9exuYSGVDNTnOrz3KV8Xywf11zC2H.jpg',NULL,'2021-05-24 04:45:04','2021-05-24 04:45:24'),(5,'Nino','Ruiz','1991-08-21','Masculino','ninoruiz8@gmail.com',NULL,'$2y$10$nZOvaMHftFoB9S.J35mmleHgm54UqM5ecpKdL4WK5P4exW5yqjjha','Normal','Entrenamiento','4',NULL,'<div>Problemas en la rodilla derecha</div>','upload-perfiles/znyMVtMpL47yKQSzHnbVJ3sFeEiSAT9K6FKCvnwm.png',NULL,'2021-05-24 04:45:47','2021-05-24 04:46:06');
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping routines for database 'gympt'
+--
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2021-06-01 15:39:13
