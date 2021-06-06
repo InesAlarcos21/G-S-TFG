@@ -12,11 +12,9 @@
 @endsection
 
 @section('content')
-
-<h2 class="text-center mb-5">Crear nuevo plan de trabajo</h2>
-
-    <div class="row justify-content-center mt-5">
-        <div class="col-md-8">
+    <div class="container row justify-content-center shadow">
+    <h2 class="text-center mb-5 mt-3 ">Crear nuevo plan de trabajo</h2>
+        <div class="col-md-10">
             <form  method="POST" action="{{route('planes.store')}}" enctype="multipart/form-data" novalidate>
                 @csrf
                 <div class="form-group">

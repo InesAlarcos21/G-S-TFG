@@ -50,12 +50,12 @@
         
         <div class="fomr-group mt-3 ">
           <label>Usuario</label>
-          <select name="usuario" class="custom-select mb-3">
+          <select name="user_id"  class="custom-select mb-3">
             <option selected>-- Selecciona al usuario con el cual quieres crear la conferencia --</option>
             
             @foreach($usuarios as $usuario)
               @if($usuario->experto == auth()->user()->id)
-              <option value="volvo">{{$usuario->name}}</option>
+              <option value="">{{$usuario->name}}</option>
               @endif
             @endforeach
 
