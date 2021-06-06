@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Event;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 
@@ -10,7 +11,8 @@ class EventController extends Controller
 {
     //Formulario del evento
     public function form(){
-        return view("evento/form");
+      $usuarios = User::all();
+        return view("evento/form",compact('usuarios'));
     }
 
     //Guardar el evento 

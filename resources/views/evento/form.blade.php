@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/trix/1.3.1/trix.css" integrity="sha512-CWdvnJD7uGtuypLLe5rLU3eUAkbzBR3Bm1SFPEaRfvXXI2v2H5Y0057EMTzNuGGRIznt8+128QIDQ8RqmHbAdg==" crossorigin="anonymous" />
 @endsection
 @section('botonesRecetas')
-<a href="{{route('evento.index')}}" class="btn btn-outline-primary mr-2 text-uppercase font-weight-bold">
+<a href="{{route('evento.index')}}" class="btn">
     <svg class="icono" className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 15l-3-3m0 0l3-3m-3 3h8M3 12a9 9 0 1118 0 9 9 0 01-18 0z" /></svg>
     Atrás
 </a>
@@ -48,6 +48,25 @@
           @enderror
         </div>
         
+        <div class="fomr-group mt-3 ">
+          <label>Usuario</label>
+          <select name="usuario" class="custom-select mb-3">
+            <option selected>-- Selecciona al usuario con el cual quieres crear la conferencia --</option>
+            
+            @foreach($usuarios as $usuario)
+              @if($usuario->experto == auth()->user()->id)
+              <option value="volvo">{{$usuario->name}}</option>
+              @endif
+            @endforeach
+
+          </select>
+          @error('usuario')
+            <span class="invalid-feedback d-block" role="alert">
+                <strong>{{$message}}</strong>
+            </span>               
+          @enderror
+        </div>
+
         <div class="fomr-group mt-3">
           <label for="descripcion">Descripcion</label>
           <input id="descripcion" type="hidden"  name="descripcion" value="{{old('descripcion')}}" >

@@ -119,9 +119,9 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                    <button type="submit" class="btn btn-secondary">
+                                   <a href="{{route('adminUser.index')}}"><button type="submit" class="btn btn-secondary">
                                          {{ __('Register') }}
-                                    </button>
+                                    </button></a>
                                 </a>
                             </div>
                         </div>

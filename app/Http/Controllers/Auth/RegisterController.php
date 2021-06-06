@@ -89,6 +89,7 @@ class RegisterController extends Controller
             'tipoUser' => $data['tipoUser'],
            
         ]);
+      
     }
   
 }

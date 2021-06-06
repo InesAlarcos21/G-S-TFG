@@ -28,7 +28,7 @@ Route::get('/', [App\Http\Controllers\InicioController::class, 'index'])->name('
 Route::get('/adminUser',  [App\Http\Controllers\AdminuserController::class, 'index'])->name('adminUser.index'); 
 Route::get('/adminUser/{usuario}/edit', [App\Http\Controllers\AdminuserController::class, 'edit'])->name('adminUser.edit'); 
 Route::put('/adminUser/{usuario}', [\App\Http\Controllers\AdminuserController::class, 'update'])->name('adminUser.update'); 
-    
+
 
 
 Route::put('/entrenadores/{usuario}', [App\Http\Controllers\EntrenadoresController::class, 'update'])->name('entrenadores.update');
