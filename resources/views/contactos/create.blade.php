@@ -14,11 +14,11 @@
 @section('content')
 
 
-<div class="row justify-content-center mt-1">
+<div class="row justify-content-center">
 
-    <div class="col-md-10 mx-auto bg-white p-1 shadow">
-        <h2 class="text-center mb-3">Contacto</h2>
-        <table class="table table-border  table-responsive-sm">
+    <div class="col-md-10 bg-white shadow">
+        <h2 class="text-center font-weight-bold mb-5 mt-4 mr-5 ml-5 ">Contacto</h2>
+        <table class="table table-border  table-responsive-sm ml-2 ">
             <tbody>
                 <tr>
                     <td>
@@ -57,7 +57,7 @@
                 
                             <div class="form-group">
                                    <!-- Button to Open the Modal -->
-                                   <button type="button" class="btn btn-dark d-block mb-1 w-100" data-toggle="modal" data-target="#myModal">
+                                   <button type="button" class="btn btn-dark d-block mb-1 " data-toggle="modal" data-target="#myModal">
                                         Enviar duda
                                     </button>
                     
@@ -98,8 +98,8 @@
         <table>
             <tr>
                 <td >
-                    <div class="mt-5 ml-3 mr-5">
-                        <h3 class="text-uppercase ">Puedes localizarnos en: </h3>
+                    <div class="mt-2 ml-3 mr-5">
+                        <h3 class=" ">Puedes localizarnos en: </h3>
                         <p><strong>Dirección:</strong> Campus Las Lagunillas, s/n, 23071 Jaén</p>
                         <p><strong>Edificio: </strong>A-3</p>
                         <p><strong>Teléfono:</strong> 953 21 24 24</p>
@@ -107,16 +107,12 @@
                     </div>
                 </td>
                
-                <td class="">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6306.027344128201!2d-3.782017839450396!3d37.789719357435494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd6dd7abfa6a10df%3A0xf05fe5191735ab43!2sUniversidad%20de%20Ja%C3%A9n!5e0!3m2!1ses!2ses!4v1621158662367!5m2!1ses!2ses" width="650" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <td >
+                    <iframe class="mt-2" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6306.027344128201!2d-3.782017839450396!3d37.789719357435494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd6dd7abfa6a10df%3A0xf05fe5191735ab43!2sUniversidad%20de%20Ja%C3%A9n!5e0!3m2!1ses!2ses!4v1621158662367!5m2!1ses!2ses" width="650" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </td>
                 
             </tr>
-            <tr>
-                <div id="shadow">
-                  
-                </div>
-            </tr>
+          
         </table>
             
             

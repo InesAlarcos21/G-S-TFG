@@ -9,15 +9,15 @@
 @endsection
 
 @section('content')
-<div class="shadow mb-4  ">
-  <br>
-  <h2 class="text-center mb-4 ">¿Quienes somos? </h2>
+<div class="card shadow">
+
+  <h2 class="text-center font-weight-bold mb-5 mt-4 mr-5 ml-5 ">¿Quienes somos? </h2>
     <div class="container">
-      <h4>Nuestros entrenadores</h4>
+      <h4 class="ml-4">Nuestros entrenadores</h4>
       <br>
       @foreach($usuarios as $usuario)
         @if($usuario->tipoUser ==='Licenciado en Ciencias de la Actividad Física y el Deporte')
-          <div class="card-columns ml-4 mr-4  shadow">
+          <div class="card-columns mr-5 ml-5 mb-5 ">
             <img class="card-img-top rounded-circle img-fluid mx-auto d-block" src="/storage/{{$usuario->imagen}}" style="width: 300px;" alt="imagen">
             <div class="card-body">
               <h3 class="card-title mt-4 text-center ">{{$usuario->name}}</h3>
@@ -30,11 +30,11 @@
     </div>
 <br><br><br>
     <div class="container">
-      <h4>Nuestros nutricinistas</h4>
+      <h4 class="ml-4">Nuestros nutricinistas</h4>
       <br>
       @foreach($usuarios as $usuario)
         @if($usuario->tipoUser ==='Licenciado en Nutricion y Dietetica')
-          <div class="card-columns ml-4 mr-4  shadow">
+          <div class="card-columns mr-5 ml-5 mb-5  ">
            
             <div class="card-body">
               <h3 class="card-title mt-4 text-center ">{{$usuario->name}}</h3>

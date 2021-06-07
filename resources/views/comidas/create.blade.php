@@ -13,7 +13,8 @@
 @section('content')
 <form class="shadow" method="POST" action="{{route('comidas.store')}}" enctype="multipart/form-data" novalidate>
   @csrf
-  <h3 class="text-center">Nuevo plan de nutrici&oacute;n</h3>
+  <br>
+  <h3 class="text-center mt-2">Nuevo plan de nutrici&oacute;n</h3>
   
   <div class="form-group ml-4 mr-4">
     <label for="nombre">Titulo para la sección</label>

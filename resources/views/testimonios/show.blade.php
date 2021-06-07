@@ -10,10 +10,9 @@
 @section('content')
 <div class="card shadow">
     @foreach($testimonios as $testimonio)
-    
-        <h1 class="text-center  font-weight-bold mb-5 mt-3 ">{{$testimonio->titulo}}</h1>
-        <div class="card-columns ml-4 mr-4 mb-5 shadow">
-            <img class="card-img-top rounded img-fluid mx-auto d-block" src="/storage/{{$testimonio->imagen}}" style="width: 700px;" alt="imagen">
+    <h1 class="text-center font-weight-bold mb-5 mt-5 mr-5 ml-5">{{$testimonio->titulo}}</h1>
+        <div class="card-columns mr-4 ml-4 ">
+            <img class="card-img-top rounded img-fluid mx-auto d-block shadow" src="/storage/{{$testimonio->imagen}}" style="width: 700px;" alt="imagen">
             <div class="card-body">
               <p>
                 <span class="font-weight-bold text-primary">Autor: {{$testimonio->autor->name}}</span>        

@@ -34,7 +34,6 @@
             <td>{{(strip_tags($comida->preparacion))}}</td>
             <td>{{$comida->tiempo}}</td>
             <td> <img class="card-img-top rounded-lg" style ="width: 90px;"src="/storage/{{$comida->imagen}}" alt="imagen"></td>
-            <td>
         
           </tr>
           @endforeach
