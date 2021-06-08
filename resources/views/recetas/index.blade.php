@@ -30,7 +30,7 @@
                   <td>{{(strip_tags($comida->preparacion))}}</td>
                   <td>{{$comida->tiempo}}</td>
                   <td> <img class="card-img-top rounded-lg" style ="width: 90px;"src="/storage/{{$comida->imagen}}" alt="imagen"></td>
-                  <td>
+                
               
                 </tr>
                 @endforeach
@@ -61,7 +61,7 @@
                 <td>{{$entreno->repeticion}}</td>
                 <td>{{$entreno->tiempo}}</td>
                 <td> <img class="card-img-top rounded-lg" style ="width: 90px;"src="/storage/{{$entreno->imagen}}" alt="imagen"></td>
-                <td>
+               
             
               </tr>
               @endforeach
@@ -69,12 +69,14 @@
       </table>
       @endif
 
-      @if(auth()->user()->tipoUser == 'Licenciado en Nutricion y Dietetica')
+      @if(auth()->user()->tipoUser == 'Graduado en Nutricion y Dietetica')
       <h2 class="text-center mb-3">Tus clientes</h2>
      
         <div class="container shadow">
       <br>
-          <table class="table mt-2 ml-1 mr-3">
+     
+          <table class="table mt-2 ml-1 mr-3 mb-3">
+          
             <thead class="thead-dark">
               <tr>
                 <th>Fotografia</th>
@@ -87,7 +89,7 @@
               </tr>
             </thead>
             @foreach($clientes as $cliente)
-      @if($listados->id == $cliente->experto)
+            @if($listados->id == $cliente->experto)
           
             <tbody>
            
@@ -140,12 +142,14 @@
               @endif
               @endforeach
             </tbody>
+          
           </table>
+         
         </div>
 
       @endif
 
-      @if(auth()->user()->tipoUser == 'Licenciado en Ciencias de la Actividad Física y el Deporte')
+      @if(auth()->user()->tipoUser == 'Graduado en Ciencias de la Actividad Física y el Deporte')
       @foreach($clientes as $cliente)
       @if($listados->id == $cliente->experto)
   
@@ -172,18 +176,18 @@
                 <td>{{(strip_tags($cliente->interes))}}</td>
                 <td>
   
-                  @if(auth()->user()->tipoUser ==='Licenciado en Nutricion y Dietetica')
+                  @if(auth()->user()->tipoUser ==='Graduado en Nutricion y Dietetica')
                       <a href="{{route('comidas.create')}}" class="btn btn-success d-block mb-1">Crear plan</a>
                   @endif  
-                  @if(auth()->user()->tipoUser ==='Licenciado en Nutricion y Dietetica')
+                  @if(auth()->user()->tipoUser ==='Graduado en Nutricion y Dietetica')
                     <a href="{{route('comidas.show',['id' =>$cliente->id])}}"class="btn btn-dark d-block mb-1">Ver Plan</a>
                    @endif
   
   
-                  @if(auth()->user()->tipoUser ==='Licenciado en Ciencias de la Actividad Física y el Deporte')
+                  @if(auth()->user()->tipoUser ==='Graduado en Ciencias de la Actividad Física y el Deporte')
                   <a href="{{route('entrenos.create')}}" class="btn btn-success d-block mb-1">Crear plan</a>
                   @endif
-                  @if(auth()->user()->tipoUser ==='Licenciado en Ciencias de la Actividad Física y el Deporte')
+                  @if(auth()->user()->tipoUser ==='Graduado en Ciencias de la Actividad Física y el Deporte')
                   <a href="{{route('entrenos.show',['id' =>$cliente->id])}}"class="btn btn-dark d-block mb-1">Ver Plan</a>
                  @endif 
                  
@@ -309,7 +313,7 @@
 
 
 
-      @if(auth()->user()->tipoUser =='Licenciado en Ciencias de la Actividad Física y el Deporte' || auth()->user()->tipoUser == 'Licenciado en Nutricion y Dietetica')
+      @if(auth()->user()->tipoUser =='Graduado en Ciencias de la Actividad Física y el Deporte' || auth()->user()->tipoUser == 'Graduado en Nutricion y Dietetica')
         <div id="accordion">
           <div class="card">
             <div class="card-header">

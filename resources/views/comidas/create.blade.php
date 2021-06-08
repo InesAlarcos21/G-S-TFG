@@ -17,8 +17,8 @@
   <h3 class="text-center mt-2">Nuevo plan de nutrici&oacute;n</h3>
   
   <div class="form-group ml-4 mr-4">
-    <label for="nombre">Titulo para la sección</label>
-    <input type="text" name="nombre" class="form-control @error('nombre') is-invalid @enderror" id="nombre" value="{{old('nombre')}}" placeholder="Nombre de la sección">
+    <label for="nombre">Nombre de la comida</label>
+    <input type="text" name="nombre" class="form-control @error('nombre') is-invalid @enderror" id="nombre" value="{{old('nombre')}}" placeholder="Nombre de la comida">
     @error('nombre')
         <span class="invalid-feedback d-block" role="alert">
             <strong>{{$message}}</strong>

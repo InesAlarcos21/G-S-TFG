@@ -1856,6 +1856,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['recetaId'],
   methods: {
@@ -1911,6 +1912,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+//
 //
 //
 //
@@ -2020,6 +2022,7 @@ vue__WEBPACK_IMPORTED_MODULE_2__.default.config.ignoredElements = ['trix-editor'
 vue__WEBPACK_IMPORTED_MODULE_2__.default.component('fecha-receta', __webpack_require__(/*! ./components/FechaReceta.vue */ "./resources/js/components/FechaReceta.vue").default);
 vue__WEBPACK_IMPORTED_MODULE_2__.default.component('eliminar-receta', __webpack_require__(/*! ./components/EliminarReceta.vue */ "./resources/js/components/EliminarReceta.vue").default);
 vue__WEBPACK_IMPORTED_MODULE_2__.default.component('like-button', __webpack_require__(/*! ./components/LikeButton.vue */ "./resources/js/components/LikeButton.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_2__.default.component('eliminar-evento', Object(function webpackMissingModule() { var e = new Error("Cannot find module './components/EliminarEvento.vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()).default);
 console.log(vue__WEBPACK_IMPORTED_MODULE_2__.default.prototype);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -2054,6 +2057,13 @@ jQuery(document).ready(function () {
  $('.clap-btn').on('click', function() {
     $(this).toggleClass('clap-active');
  });*/
+//-------------------MAPA EN LA PAGINA DE CONTACTO ----------------------
+
+var map = L.map('map').setView([51.505, -0.09], 13);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+L.marker([51.5, -0.09]).addTo(map).bindPopup('A pretty CSS3 popup.<br> Easily customizable.').openPopup(); //------------------------------------------------------------------------
 
 /***/ }),
 
@@ -45548,7 +45558,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
   \*********************************/
 /***/ (() => {
 
-throw new Error("Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):\nModuleBuildError: Module build failed (from ./node_modules/css-loader/dist/cjs.js):\nError: Can't resolve '../images/comida.jpg' in 'C:\\Users\\Ines2\\Desktop\\gym-pt\\resources\\sass'\n    at finishWithoutResolve (C:\\Users\\Ines2\\Desktop\\gym-pt\\node_modules\\enhanced-resolve\\lib\\Resolver.js:293:18)\n    at C:\\Users\\Ines2\\Desktop\\gym-pt\\node_modules\\enhanced-resolve\\lib\\Resolver.js:362:15\n    at C:\\Users\\Ines2\\Desktop\\gym-pt\\node_modules\\enhanced-resolve\\lib\\Resolver.js:410:5\n    at eval (eval at create (C:\\Users\\Ines2\\Desktop\\gym-pt\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:16:1)\n    at C:\\Users\\Ines2\\Desktop\\gym-pt\\node_modules\\enhanced-resolve\\lib\\Resolver.js:410:5\n    at eval (eval at create (C:\\Users\\Ines2\\Desktop\\gym-pt\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:27:1)\n    at C:\\Users\\Ines2\\Desktop\\gym-pt\\node_modules\\enhanced-resolve\\lib\\DescriptionFilePlugin.js:87:43\n    at C:\\Users\\Ines2\\Desktop\\gym-pt\\node_modules\\enhanced-resolve\\lib\\Resolver.js:410:5\n    at eval (eval at create (C:\\Users\\Ines2\\Desktop\\gym-pt\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:15:1)\n    at C:\\Users\\Ines2\\Desktop\\gym-pt\\node_modules\\enhanced-resolve\\lib\\Resolver.js:410:5\n    at eval (eval at create (C:\\Users\\Ines2\\Desktop\\gym-pt\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:16:1)\n    at C:\\Users\\Ines2\\Desktop\\gym-pt\\node_modules\\enhanced-resolve\\lib\\Resolver.js:410:5\n    at eval (eval at create (C:\\Users\\Ines2\\Desktop\\gym-pt\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:27:1)\n    at C:\\Users\\Ines2\\Desktop\\gym-pt\\node_modules\\enhanced-resolve\\lib\\DescriptionFilePlugin.js:87:43\n    at C:\\Users\\Ines2\\Desktop\\gym-pt\\node_modules\\enhanced-resolve\\lib\\Resolver.js:410:5\n    at eval (eval at create (C:\\Users\\Ines2\\Desktop\\gym-pt\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:16:1)\n    at processResult (C:\\Users\\Ines2\\Desktop\\gym-pt\\node_modules\\webpack\\lib\\NormalModule.js:676:19)\n    at C:\\Users\\Ines2\\Desktop\\gym-pt\\node_modules\\webpack\\lib\\NormalModule.js:778:5\n    at C:\\Users\\Ines2\\Desktop\\gym-pt\\node_modules\\loader-runner\\lib\\LoaderRunner.js:399:11\n    at C:\\Users\\Ines2\\Desktop\\gym-pt\\node_modules\\loader-runner\\lib\\LoaderRunner.js:251:18\n    at context.callback (C:\\Users\\Ines2\\Desktop\\gym-pt\\node_modules\\loader-runner\\lib\\LoaderRunner.js:124:13)\n    at Object.loader (C:\\Users\\Ines2\\Desktop\\gym-pt\\node_modules\\css-loader\\dist\\index.js:154:5)\n    at processTicksAndRejections (node:internal/process/task_queues:94:5)");
+throw new Error("Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nSassError: Can't find stylesheet to import.\n   ╷\n14 │ @import 'nosotros'; \n   │         ^^^^^^^^^^\n   ╵\n  resources\\sass\\app.scss 14:9  root stylesheet\n    at processResult (C:\\Users\\Ines2\\Desktop\\gs\\node_modules\\webpack\\lib\\NormalModule.js:676:19)\n    at C:\\Users\\Ines2\\Desktop\\gs\\node_modules\\webpack\\lib\\NormalModule.js:778:5\n    at C:\\Users\\Ines2\\Desktop\\gs\\node_modules\\loader-runner\\lib\\LoaderRunner.js:399:11\n    at C:\\Users\\Ines2\\Desktop\\gs\\node_modules\\loader-runner\\lib\\LoaderRunner.js:251:18\n    at context.callback (C:\\Users\\Ines2\\Desktop\\gs\\node_modules\\loader-runner\\lib\\LoaderRunner.js:124:13)\n    at C:\\Users\\Ines2\\Desktop\\gs\\node_modules\\sass-loader\\dist\\index.js:54:7\n    at Function.call$2 (C:\\Users\\Ines2\\Desktop\\gs\\node_modules\\sass\\sass.dart.js:92612:16)\n    at _render_closure1.call$2 (C:\\Users\\Ines2\\Desktop\\gs\\node_modules\\sass\\sass.dart.js:81115:12)\n    at _RootZone.runBinary$3$3 (C:\\Users\\Ines2\\Desktop\\gs\\node_modules\\sass\\sass.dart.js:27260:18)\n    at _FutureListener.handleError$1 (C:\\Users\\Ines2\\Desktop\\gs\\node_modules\\sass\\sass.dart.js:25816:19)\n    at _Future__propagateToListeners_handleError.call$0 (C:\\Users\\Ines2\\Desktop\\gs\\node_modules\\sass\\sass.dart.js:26114:49)\n    at Object._Future__propagateToListeners (C:\\Users\\Ines2\\Desktop\\gs\\node_modules\\sass\\sass.dart.js:4536:77)\n    at _Future._completeError$2 (C:\\Users\\Ines2\\Desktop\\gs\\node_modules\\sass\\sass.dart.js:25946:9)\n    at _AsyncAwaitCompleter.completeError$2 (C:\\Users\\Ines2\\Desktop\\gs\\node_modules\\sass\\sass.dart.js:25600:12)\n    at Object._asyncRethrow (C:\\Users\\Ines2\\Desktop\\gs\\node_modules\\sass\\sass.dart.js:4335:17)\n    at C:\\Users\\Ines2\\Desktop\\gs\\node_modules\\sass\\sass.dart.js:12856:20");
 
 /***/ }),
 
@@ -77178,7 +77188,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("span", { domProps: { textContent: _vm._s(_vm.formatearFecha) } })
+  return _c("span", [_vm._v(_vm._s(_vm.formatearFecha))])
 }
 var staticRenderFns = []
 render._withStripped = true

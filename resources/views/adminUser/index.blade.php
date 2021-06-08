@@ -13,7 +13,7 @@
 
 @section('content')
 <div class="container shadow ">
-    {{$usuario}}
+   
     <h2 class="text-center font-weight-bold mb-3">Completa tu perfil</h2>
     <p>¿Eres un experto licenciado en...?</p>
     

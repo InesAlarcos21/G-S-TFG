@@ -61,7 +61,7 @@
 
                 <div class="form-group">
                     <!-- Button to Open the Modal -->
-                    <button type="button" class="btn btn-success d-block mb-1 w-100" data-toggle="modal" data-target="#myModal">
+                    <button type="button" class="btn btn-success d-block mb-1" data-toggle="modal" data-target="#myModal">
                         Guardar cambios
                      </button>
      

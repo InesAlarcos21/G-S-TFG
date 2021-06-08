@@ -111,9 +111,9 @@ class AdminuserController extends Controller
         }
         $usuario->interes = $data['interes']; 
         $usuario->plan = $data['plan']; 
-       $seleccion = User::all(); 
+        $seleccion = User::all(); 
 
-       $usuario->save();
+        $usuario->save();
         //Redireccionar 
         return view('seleccionar.index', compact('usuario', 'seleccion'));
        

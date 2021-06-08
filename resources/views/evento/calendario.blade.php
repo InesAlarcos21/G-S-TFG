@@ -18,7 +18,7 @@
     <hr>
     <p class="lead">
     @if(auth()->user()->tipoUser !== 'Normal')
-    <a class="btn btn-success"  href="{{ asset('/evento/form') }}">Crear un evento</a>
+    <a class="btn btn-success"  href="{{ asset('/evento/form') }}">Crear un sesi&oacute;n de trabajo</a>
     @endif
  
     <hr>

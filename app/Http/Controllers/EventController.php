@@ -22,7 +22,7 @@ class EventController extends Controller
         //Validación 
         $this->validate($request, [
         'titulo'     =>  'required',
-        'user_id' => 'required',
+       // 'user_id' => 'required',
         'descripcion'  =>  'required',
         'conferencia'  =>  'required',
         'fecha' =>  'required'
@@ -31,7 +31,7 @@ class EventController extends Controller
         //guardar en la base de datos: 
         Event::insert([
           'titulo'       => $request->input("titulo"),
-          'user_id'      => $request->input('user_id'),
+        //  'user_id'      => $request->input('user_id'),
           'descripcion'  => $request->input("descripcion"),
           'conferencia'  => $request->input("conferencia"),
           'fecha'        => $request->input("fecha")

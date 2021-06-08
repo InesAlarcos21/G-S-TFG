@@ -74,7 +74,7 @@
                         <input id="plan" type="radio" class=" @error('plan') is-invalid @enderror" name="plan" value="Completo" required autocomplete="plan"> Seleccionar plan completo
                     </td>
                     <td class="btn btn-dark justify-content-center w-100 text-white">
-                        <input id="plan" type="radio" class=" @error('plan') is-invalid @enderror" name="plan" value="Nutricion" required autocomplete="plan">Seleccionar plan de nutrici&oacute;n
+                        <input id="plan" type="radio" class=" @error('plan') is-invalid @enderror" name="plan" value="Nutricion" required autocomplete="plan"> Seleccionar plan de nutricion
                     </td>
                 </tr>
         

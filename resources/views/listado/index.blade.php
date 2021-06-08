@@ -13,7 +13,71 @@
 @section('content')
 
 
-  @foreach($usuarios as $usuario)
+  
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th>Fotografia</th>
+          <th>Nombre</th>
+          <th>Apellidos</th>
+          <th>Email</th>
+          <th>Datos de interes</th>
+          <th>Acciones</th>
+
+        </tr>
+      </thead>
+     
+      @foreach($usuarios as $usuario)
+    @if(auth()->user()->tipoUser =='Administrador')
+      <tbody>
+        <tr>
+          <td> <img class="card-img-top rounded-lg" style ="width: 90px;"src="/storage/{{$usuario->imagen}}" alt="imagen"></td>
+          <td>{{$usuario->name}}</td>
+          <td>{{$usuario->apellido}}</td>
+          <td>{{$usuario->email}}</td>
+          <td>{{(strip_tags($usuario->interes))}}</td>
+          <td>
+            <button type="button" class="btn btn-danger d-block mb-1 w-100" data-toggle="modal" data-target="#myModal">
+              Eliminar Usuario
+             </button>
+ 
+             <!-- The Modal -->
+             <div class="modal" id="myModal">
+               <div class="modal-dialog">
+                 <div class="modal-content">
+ 
+                   <!-- Modal Header -->
+                   <div class="modal-header">
+                     <h4 class="modal-title">¿Estas seguro de que quieres eliminar esta cita ? </h4>
+                     <button type="button" class="close" data-dismiss="modal">&times;</button>
+                   </div>
+ 
+                   <!-- Modal body -->
+                   <div class="modal-body">
+                     <p>La cita se eliminara.... </p>
+                   </div>
+ 
+                   <!-- Modal footer -->
+                   <div class="modal-footer">
+                     <form action="{{route('listado.destroy',['usuario' =>$usuario->id])}}" method="POST">
+                       @csrf
+                       @method('delete')
+                       <input type="submit" name="" id="" class="btn btn-danger d-block mb-1 w-100" value="Eliminar &times; ">
+                     </form>
+                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                   </div>
+ 
+                 </div>
+               </div>
+             </div>
+          </td>
+        </tr>
+        @endif
+        @endforeach
+      </tbody>
+    </table>
+
+    @foreach($usuarios as $usuario)
     @if($listados->id == $usuario->experto)
 
       <div class="container">
@@ -38,18 +102,18 @@
               <td>{{(strip_tags($usuario->interes))}}</td>
               <td>
 
-                @if(auth()->user()->tipoUser ==='Licenciado en Nutricion y Dietetica')
+                @if(auth()->user()->tipoUser ==='Graduado en Nutricion y Dietetica')
                     <a href="{{route('comidas.create')}}" class="btn btn-success d-block mb-1">Crear plan</a>
                 @endif  
-                @if(auth()->user()->tipoUser ==='Licenciado en Nutricion y Dietetica')
+                @if(auth()->user()->tipoUser ==='Graduado en Nutricion y Dietetica')
                   <a href="{{route('comidas.show',['id' =>$usuario->id])}}"class="btn btn-dark d-block mb-1">Ver Plan</a>
                  @endif
 
 
-                @if(auth()->user()->tipoUser ==='Licenciado en Ciencias de la Actividad Física y el Deporte')
+                @if(auth()->user()->tipoUser ==='Graduado en Ciencias de la Actividad Física y el Deporte')
                 <a href="{{route('entrenos.create')}}" class="btn btn-success d-block mb-1">Crear plan</a>
                 @endif
-                @if(auth()->user()->tipoUser ==='Licenciado en Ciencias de la Actividad Física y el Deporte')
+                @if(auth()->user()->tipoUser ==='Graduado en Ciencias de la Actividad Física y el Deporte')
                 <a href="{{route('entrenos.show',['id' =>$usuario->id])}}"class="btn btn-dark d-block mb-1">Ver Plan</a>
                @endif 
                

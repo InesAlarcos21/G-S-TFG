@@ -54,7 +54,7 @@
         </div>
     @endif
 
-    @if($perfil->usuario->tipoUser === 'Licenciado en Ciencias de la Actividad Física y el Deporte' || $perfil->usuario->tipoUser === 'Licenciado en Nutricion y Dietetica')
+    @if($perfil->usuario->tipoUser === 'Graduado en Ciencias de la Actividad Física y el Deporte' || $perfil->usuario->tipoUser === 'Graduado en Nutricion y Dietetica')
     <div class="container">
         <div class="row">
             <div class="col-md-5">

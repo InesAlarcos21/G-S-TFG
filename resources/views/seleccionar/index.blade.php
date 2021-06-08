@@ -15,7 +15,7 @@
 
 <div class="container shadow">
   <br>
-  <h2 class="mt-3">Selecciona a uno de nuestros entrenados o nutricionistas </h2>
+  <h2 class="mt-3">Selecciona a uno de nuestros expertos </h2>
 
   <div class="col-md-12  mx-auto  p-3">
     <form  method="POST" action="{{route('entrenadores.update',['usuario' =>$usuario->id])}}" enctype="multipart/form-data" novalidate>
@@ -23,7 +23,7 @@
         @method('PUT')
 
         @foreach($seleccion as $selec)
-            @if( $selec->tipoUser =='Licenciado en Ciencias de la Actividad Física y el Deporte' && $selec->tipoUser !=='Administrador')
+            @if( $selec->tipoUser =='Graduado en Ciencias de la Actividad Física y el Deporte' && $selec->tipoUser !=='Administrador')
             
              
 
@@ -50,7 +50,7 @@
                       <td>{{$selec->email}}</td>
                       <td>{{(strip_tags($selec->formacion))}}</td>
                       <td>{{(strip_tags($selec->interes))}}</td>
-                      <td><input id="experto" type="radio" class=" btn btn-secondary @error('experto') is-invalid @enderror" name="experto" value="{{$selec->id}}" required autocomplete="experto">Seleccionar</td>
+                      <td><input id="experto" type="checkbox" class=" btn btn-secondary @error('experto') is-invalid @enderror" name="experto" value="{{$selec->id}}" required autocomplete="experto">Seleccionar</td>
           
                     </tr>
                   </tbody>
@@ -62,7 +62,7 @@
         @endforeach
 
         @foreach($seleccion as $selec)
-            @if($selec->tipoUser =='Licenciado en Nutricion y Dietetica' && $selec->tipoUser !=='Administrador')
+            @if($selec->tipoUser =='Graduado en Nutricion y Dietetica' && $selec->tipoUser !=='Administrador')
             
              
               <div class="container">
@@ -88,7 +88,7 @@
                       <td>{{$selec->email}}</td>
                       <td>{{(strip_tags($selec->formacion))}}</td>
                       <td>{{(strip_tags($selec->interes))}}</td>
-                      <td><input id="experto" type="radio" class=" btn btn-secondary @error('experto') is-invalid @enderror" name="experto" value="{{$selec->id}}" required autocomplete="experto">Seleccionar</td>
+                      <td><input id="experto" type="checkbox" class=" btn btn-secondary @error('experto') is-invalid @enderror" name="experto" value="{{$selec->id}}" required autocomplete="experto">Seleccionar</td>
           
                     </tr>
                   </tbody>

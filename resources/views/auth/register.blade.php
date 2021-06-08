@@ -104,9 +104,9 @@
                             <div class="col-md-6">
                                 <input id="tipoUser" type="radio" class=" @error('tipoUser') is-invalid @enderror" name="tipoUser" value="Normal" required autocomplete="tipoUser">Usuario
                                 <br>
-                                <input id="tipoUser" type="radio" class=" @error('tipoUser') is-invalid @enderror" name="tipoUser" value="Licenciado en Ciencias de la Actividad Física y el Deporte" required autocomplete="tipoUser">Licenciado en Ciencias de la Actividad Física y el Deporte
+                                <input id="tipoUser" type="radio" class=" @error('tipoUser') is-invalid @enderror" name="tipoUser" value="Graduado en Ciencias de la Actividad Física y el Deporte" required autocomplete="tipoUser">Graduado en Ciencias de la Actividad Física y el Deporte
                                 <br>    
-                                <input id="tipoUser" type="radio" class=" @error('tipoUser') is-invalid @enderror" name="tipoUser" value="Licenciado en Nutricion y Dietetica" required autocomplete="tipoUser">Licenciado en Nutricion y Dietetica
+                                <input id="tipoUser" type="radio" class=" @error('tipoUser') is-invalid @enderror" name="tipoUser" value="Graduado en Nutricion y Dietetica" required autocomplete="tipoUser">Graduado en Nutricion y Dietetica
                                 <br>
                                 @error('tipoUser')
                                     <span class="invalid-feedback" role="alert">
