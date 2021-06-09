@@ -20,7 +20,7 @@
     <form  method="POST" action="{{route('adminUser.update',['usuario' =>$usuario->id])}}" enctype="multipart/form-data" novalidate>
         @csrf
         @method('PUT')
-        <div class="form-group ml-3 mb-5 mr-3 mt-3">
+        <div class="form-group ml-3 mr-3 mt-3">
             <label for="imagen" class="mt-4">Añada una fotografia a tu perfil</label>
             <input type="file" name="imagen" class="form-control @error('imagen') is-invalid @enderror" id="imagen" >
             @error('imagen')
@@ -29,7 +29,15 @@
                 </span>               
             @enderror
         </div>
-            
+        <div class="form-group ml-3 mr-3 ">
+            <label for="telefono" class="mt-4">Añade un n&uacute;mero de tel&eacute;fono</label>
+            <input type="tel" name="telefono" class="form-control @error('telefono') is-invalid @enderror" id="telefono" placeholder="Inserta tu numero de tel&eacute;fono">
+            @error('telefono')
+                <span class="invalid-feedback d-block" role="alert">
+                    <strong>{{$message}}</strong>
+                </span>               
+            @enderror
+        </div>
         <div class="form-group ml-3 mr-3 mt-3">
             <label for="interes">Datos de interes</label>
             <input id="interes" type="hidden"  name="interes" value="">

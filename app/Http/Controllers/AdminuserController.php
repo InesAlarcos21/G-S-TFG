@@ -109,6 +109,7 @@ class AdminuserController extends Controller
             $usuario->imagen= $ruta_imagen; 
 
         }
+        $usuario->telefono = $data['telefono']; 
         $usuario->interes = $data['interes']; 
         $usuario->plan = $data['plan']; 
         $seleccion = User::all(); 

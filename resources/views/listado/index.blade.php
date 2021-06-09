@@ -13,7 +13,8 @@
 @section('content')
 
 
-  
+@foreach($usuarios as $usuario)
+@if(auth()->user()->tipoUser =='Administrador')
     <table class="table">
       <thead class="thead-dark">
         <tr>
@@ -27,8 +28,7 @@
         </tr>
       </thead>
      
-      @foreach($usuarios as $usuario)
-    @if(auth()->user()->tipoUser =='Administrador')
+    
       <tbody>
         <tr>
           <td> <img class="card-img-top rounded-lg" style ="width: 90px;"src="/storage/{{$usuario->imagen}}" alt="imagen"></td>
@@ -72,13 +72,14 @@
              </div>
           </td>
         </tr>
-        @endif
-        @endforeach
+       
       </tbody>
     </table>
+    @endif
+    @endforeach
 
-    @foreach($usuarios as $usuario)
-    @if($listados->id == $usuario->experto)
+  
+  
 
       <div class="container">
         <table class="table">
@@ -93,7 +94,10 @@
 
             </tr>
           </thead>
+          @foreach($usuarios as $usuario)
+          @if($listados->id == $usuario->experto)
           <tbody>
+        
             <tr>
               <td> <img class="card-img-top rounded-lg" style ="width: 90px;"src="/storage/{{$usuario->imagen}}" alt="imagen"></td>
               <td>{{$usuario->name}}</td>
@@ -154,11 +158,14 @@
               </td>
    
             </tr>
+          
           </tbody>
+          @endif
+          @endforeach
         </table>
       </div>
-@endif
-@endforeach
+
+
 
 
 @section('script')
