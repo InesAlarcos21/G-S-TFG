@@ -84,6 +84,7 @@
                 <th>Apellidos</th>
                 <th>Email</th>
                 <th>Datos de interes</th>
+                <th>Telefono</th>
                 <th>Acciones</th>
   
               </tr>
@@ -99,6 +100,7 @@
                 <td>{{$cliente->apellido}}</td>
                 <td>{{$cliente->email}}</td>
                 <td>{{(strip_tags($cliente->interes))}}</td>
+                <td>{{$cliente->telefono}}</td>
                 <td>
                     <a href="{{route('comidas.create')}}" class="btn btn-success d-block mb-1">Crear plan</a>
                     <a href="{{route('comidas.show',['id' =>$cliente->id])}}"class="btn btn-dark d-block mb-1">Ver Plan</a>
@@ -163,6 +165,7 @@
                 <th>Apellidos</th>
                 <th>Email</th>
                 <th>Datos de interes</th>
+                <th>Telefono</th>
                 <th>Acciones</th>
   
               </tr>
@@ -174,6 +177,7 @@
                 <td>{{$cliente->apellido}}</td>
                 <td>{{$cliente->email}}</td>
                 <td>{{(strip_tags($cliente->interes))}}</td>
+                <td>{{$cliente->telefono}}</td>
                 <td>
   
                   @if(auth()->user()->tipoUser ==='Graduado en Nutricion y Dietetica')

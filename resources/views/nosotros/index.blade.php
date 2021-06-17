@@ -16,7 +16,7 @@
       <h4 class="ml-4">Nuestros entrenadores</h4>
       <br>
       @foreach($usuarios as $usuario)
-        @if($usuario->tipoUser ==='Licenciado en Ciencias de la Actividad Física y el Deporte')
+        @if($usuario->tipoUser ==='Graduado en Ciencias de la Actividad Física y el Deporte')
           <div class="card-columns mr-5 ml-5 mb-5 ">
             <img class="card-img-top rounded-circle img-fluid mx-auto d-block" src="/storage/{{$usuario->imagen}}" style="width: 300px;" alt="imagen">
             <div class="card-body">
@@ -33,7 +33,7 @@
       <h4 class="ml-4">Nuestros nutricinistas</h4>
       <br>
       @foreach($usuarios as $usuario)
-        @if($usuario->tipoUser ==='Licenciado en Nutricion y Dietetica')
+        @if($usuario->tipoUser ==='Graduado en Nutricion y Dietetica')
           <div class="card-columns mr-5 ml-5 mb-5  ">
            
             <div class="card-body">
