@@ -13,8 +13,9 @@
 @section('content')
 
 
-@foreach($usuarios as $usuario)
+
 @if(auth()->user()->tipoUser =='Administrador')
+@foreach($usuarios as $usuario)
     <table class="table">
       <thead class="thead-dark">
         <tr>
@@ -75,11 +76,12 @@
        
       </tbody>
     </table>
-    @endif
+   
     @endforeach
+    @endif
 
   
-  
+    @if(auth()->user()->tipoUser !='Administrador')
 
       <div class="container">
         <table class="table">
@@ -164,7 +166,7 @@
           @endforeach
         </table>
       </div>
-
+@endif
 
 
 

@@ -9,6 +9,7 @@
 
 @section('content')
     <h2 class="text-center my-5">Plan de trabajo</h2>
+    
     @foreach($planT as $plan)
         <h1 class="text-center mb-4">{{$plan->titulo}}</h1>
         <div class="imagen-receta">

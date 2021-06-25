@@ -6,3 +6,11 @@ Para poder ejecutar la plataforma web G&S en local se deben de seguir los siguie
 		- php artisan migrate --> para cargar las tablas en la base de datos que hemos creado anterirmente
 		- php artisan db:seed --> para cargar los datos predefinidos. 
 		- php artisan serve --> para lanzar el "servidor".
+
+	Por defecto hay un usuario "Administrador" ya creado. Para ello tanto solo acceder a la pestaña de login
+		(el icono del usuario en la parte superior-derecha de la barra de navegación) y rellenar 
+		el login con el usuario: 
+			Usuario: ialarcosq02@gmail.com
+			Contraseña: 12345678. 
+
+	Nota: todas las contraseñas que se introduzcan deben tener como minimo 8 caracteres. 

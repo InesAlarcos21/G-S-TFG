@@ -15,11 +15,11 @@ class CreatePlanesTable extends Migration
     {
         Schema::create('planes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->references('id')->on('users');
+          //  $table->foreignId('user_id')->references('id')->on('users')->nullable();
             $table->string('nombre'); 
             $table->text('descripcion'); 
             $table->string('precio');
-            $table->text('imagen'); 
+          //  $table->text('imagen'); 
             $table->timestamps();
         });
     }

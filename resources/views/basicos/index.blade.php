@@ -60,9 +60,9 @@
             </thead>
             <tbody>
                 <tr >
-                    <td><img class="card-img-top rounded-lg ml-1" style="width: 300px;" src="/storage/{{$planes[0]->imagen}}" alt="imagen"></td>
-                    <td><img class="card-img-top rounded-lg ml-5" style="width: 300px;" src="/storage/{{$planes[1]->imagen}}" alt="imagen"></td>
-                    <td><img class="card-img-top rounded-lg ml-1" style="width: 300px;" src="/storage/{{$planes[2]->imagen}}" alt="imagen"></td>
+                    <td><img class="card-img-top rounded-lg ml-1" style="width: 300px;" src="/images/entrenamiento.jpg" alt="imagen"></td>
+                    <td><img class="card-img-top rounded-lg ml-5" style="width: 300px;" src="/images/completo.jpg" alt="imagen"></td>
+                    <td><img class="card-img-top rounded-lg ml-1" style="width: 300px;" src="/images/nutricion.jpg" alt="imagen"></td>
                 </tr>
                 <tr>
                     <td>  {{(strip_tags($planes[0]->descripcion))}}</td>
@@ -88,13 +88,6 @@
         
             </tbody>
         </table>
-
-
-
-
-
-
-
 
         <div class="form-group mb-5" style="margin-bottom: 40px; ">
             <!-- Button to Open the Modal -->
