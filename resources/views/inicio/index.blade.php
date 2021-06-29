@@ -151,9 +151,7 @@
                     </tr>
                 </tbody>
             </table>
-                @foreach($planes as $plan)
-                    @include('ui.planes')   
-                @endforeach
+           
         </div>
     </div>
     <div class="container">
